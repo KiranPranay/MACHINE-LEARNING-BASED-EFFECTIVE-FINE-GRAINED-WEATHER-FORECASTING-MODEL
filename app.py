@@ -21,14 +21,14 @@ from statsmodels.tsa.arima_model import ARIMA  # library for ARIMA model
 from flask import *
 
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = r'C:\JPVP\main\CODE\Dataset'
+app.config['UPLOAD_FOLDER'] = r'/media/pranay/Main Storage/Py-Programs/begum/Dataset'
 app.config['SECRET_KEY'] = 'b0b4fbefdc48be27a6123605f02b6b86'
 
 global df, X_train, X_test, y_train, y_test
 
 
 def preprocess():
-    df = pd.read_csv("C:\JPVP\main\CODE\Dataset")
+    df = pd.read_csv("/media/pranay/Main Storage/Py-Programs/begum/Dataset/weather_history.csv")
 
     df['Date'] = df["Formatted Date"].str[:10]
     df['Summary'] = df['Summary'].replace({'Partly Cloudy': 'Cloudly',
