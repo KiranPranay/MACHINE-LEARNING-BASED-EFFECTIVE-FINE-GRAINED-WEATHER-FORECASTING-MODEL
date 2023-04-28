@@ -1,0 +1,8 @@
+numpy
+pandas
+matplotlib
+flask
+sklearn3
+scipy
+pmdarima
+statsmodels
