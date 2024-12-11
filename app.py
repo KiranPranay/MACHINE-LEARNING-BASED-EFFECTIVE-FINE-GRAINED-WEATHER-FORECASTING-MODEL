@@ -9,26 +9,24 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import GridSearchCV, RandomizedSearchCV
-from scipy.stats import loguniform
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import classification_report
-from pmdarima import auto_arima  # library for finding p, q, d
 from statsmodels.tsa.stattools import adfuller  # library for finding d
 from statsmodels.tsa.arima_model import ARIMA  # library for ARIMA model
 from flask import *
 
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = r'/media/pranay/Main Storage/Py-Programs/begum/Dataset'
+app.config['UPLOAD_FOLDER'] = r'C:/weather/Dataset'
 app.config['SECRET_KEY'] = 'b0b4fbefdc48be27a6123605f02b6b86'
 
 global df, X_train, X_test, y_train, y_test
 
 
 def preprocess():
-    df = pd.read_csv("/media/pranay/Main Storage/Py-Programs/begum/Dataset/weather_history.csv")
+    df = pd.read_csv("C:/weather/weather_history.csv")
 
     df['Date'] = df["Formatted Date"].str[:10]
     df['Summary'] = df['Summary'].replace({'Partly Cloudy': 'Cloudly',
