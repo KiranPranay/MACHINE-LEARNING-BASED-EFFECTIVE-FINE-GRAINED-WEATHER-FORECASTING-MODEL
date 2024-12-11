@@ -8,7 +8,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-- Python 3.6 or above
+- Python 3.6 (Recommended)
 - Flask 1.0.2
 - pandas 0.23.4
 - numpy 1.15.4
